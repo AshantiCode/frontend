@@ -104,7 +104,7 @@ export default {
 
       Axios.delete(deleteUrl).then(response => {
         console.log("response data: ", response);
-        location.reload();
+        // location.reload();
       });
     }
   },
