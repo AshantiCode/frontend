@@ -1,0 +1,140 @@
+{
+  "items": [
+    {
+      "id": "1",
+      "category": "food",
+      "userId": "1",
+      "name": "Pasta",
+      "description": "Super delicious italian Pasta",
+      "weight": "1",
+      "price": "24 ",
+      "quantity": "8"
+    },
+    {
+      "id": "2",
+      "category": "drinks",
+      "userId": "1",
+      "name": "Mojito",
+      "volume": "0.33",
+      "price": "12",
+      "quantity": "6"
+    },
+    {
+      "id": "3",
+      "category": "food",
+      "userId": "1",
+      "name": "Pizza",
+      "description": "Super delicious italian Pizza",
+      "weight": "1 ",
+      "price": "16",
+      "quantity": "2"
+    },
+    {
+      "id": "4",
+      "category": "drinks",
+      "userId": "2",
+      "name": "Beer",
+      "volume": "5",
+      "price": "4",
+      "quantity": "6"
+    },
+    {
+      "id": "5",
+      "category": "food",
+      "userId": "2",
+      "name": "Döner",
+      "description": "Best Döner in the World",
+      "weight": "1 ",
+      "price": "12",
+      "quantity": "3"
+    },
+    {
+      "id": "6",
+      "category": "food",
+      "userId": "2",
+      "name": "Vietnamese Food",
+      "description": "directly from south-east asia",
+      "weight": "2 ",
+      "price": "19",
+      "quantity": "4"
+    },
+    {
+      "id": "7",
+      "category": "drinks",
+      "userId": "1",
+      "name": "Red whine",
+      "volume": "5",
+      "price": "20",
+      "quantity": "5"
+    },
+    {
+      "name": "test",
+      "category": "food",
+      "description": "dfdsfsf",
+      "weight": 3,
+      "quantity": 3,
+      "price": 15,
+      "id": "_bgJZjJ"
+    },
+    {
+      "name": "Prosecco",
+      "category": "drinks",
+      "volume": 22,
+      "quantity": 5,
+      "price": 32,
+      "id": "qE6VRfj"
+    },
+    {
+      "name": "Yet Another Food Item",
+      "category": "food",
+      "description": "Yummi Yummy deliscios yamm yamm",
+      "weight": 2,
+      "quantity": 4,
+      "price": 35,
+      "id": "eAyz583"
+    },
+    {
+      "name": "Green Smothies",
+      "category": "drinks",
+      "volume": 21,
+      "quantity": 15,
+      "price": 5,
+      "id": "t59X9fb"
+    },
+    {
+      "name": "Mashed Potatoes",
+      "category": "food",
+      "description": "Like your granny did!",
+      "weight": 2,
+      "quantity": 13,
+      "price": 9,
+      "id": "DU49QK5"
+    },
+    {
+      "name": "Milk",
+      "category": "drinks",
+      "volume": 16,
+      "quantity": 5,
+      "price": 14,
+      "creatorId": "Lc6bGUqX2RXGoOYtRojJsAzgIDu1",
+      "id": "qyElW7W"
+    }
+  ],
+  "user": [
+    {
+      "id": "1",
+      "email": "clara@email.com",
+      "password": "1sdjfsdfsee"
+    },
+    {
+      "id": "2",
+      "email": "bill@email.com",
+      "password": "2sdjfsdfsee"
+    },
+    {
+      "id": "3",
+      "email": "james@email.com",
+      "password": "3sdjfsdfsee"
+    }
+  ]
+}
