@@ -34,7 +34,7 @@
               color="accent"
               v-if="userIsCreator"
               style="transform: translateY(-44px)"
-              @click="onDeleteItem(item.id)"
+              @click="onDeleteItem(item)"
             >
               <v-icon>mdi-delete-forever</v-icon>
             </v-btn>
@@ -99,11 +99,15 @@ export default {
     };
   },
   methods: {
-    onDeleteItem(itemId) {
-      const deleteUrl = `/items/${itemId}`;
-
-      Axios.delete(deleteUrl).then(response => {
-        console.log("response data: ", response);
+    onDeleteItem(item) {
+      const deleteUrl = `/items/${item.id}`;
+      //   const self = this.i;
+      Axios.delete(deleteUrl, item).then(response => {
+        console.log("delete respone: ", response);
+        if (response.value) {
+          console.log("in remove: ", this.item);
+          this.item.$remove(item);
+        }
         // location.reload();
       });
     }

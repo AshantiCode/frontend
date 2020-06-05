@@ -111,13 +111,49 @@
       "id": "DU49QK5"
     },
     {
-      "name": "Milk",
+      "name": "Drinkds",
       "category": "drinks",
-      "volume": 16,
-      "quantity": 5,
-      "price": 14,
+      "volume": 1,
+      "quantity": 1,
+      "price": 1,
       "creatorId": "Lc6bGUqX2RXGoOYtRojJsAzgIDu1",
-      "id": "qyElW7W"
+      "id": "EnA3f2y"
+    },
+    {
+      "name": "Coffee",
+      "category": "drinks",
+      "volume": 1,
+      "quantity": 1,
+      "price": 1,
+      "creatorId": "Lc6bGUqX2RXGoOYtRojJsAzgIDu1",
+      "id": "k8z2MOD"
+    },
+    {
+      "name": "Coffeee",
+      "category": "drinks",
+      "volume": 1,
+      "quantity": 1,
+      "price": 1,
+      "creatorId": "Lc6bGUqX2RXGoOYtRojJsAzgIDu1",
+      "id": "bpSmZh-"
+    },
+    {
+      "name": "New Drink",
+      "category": "drinks",
+      "volume": 1,
+      "quantity": 1,
+      "price": 1,
+      "creatorId": "Lc6bGUqX2RXGoOYtRojJsAzgIDu1",
+      "id": "b9cxZ8I"
+    },
+    {
+      "name": "Jetzt bin ich gespannt",
+      "category": "drinks",
+      "volume": 24,
+      "quantity": 5,
+      "price": 21,
+      "creatorId": "Lc6bGUqX2RXGoOYtRojJsAzgIDu1",
+      "id": "QJGAEbg"
     }
   ],
   "user": [

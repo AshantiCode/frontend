@@ -5,7 +5,7 @@
         class="display-3 my-12 text-center font-weight-bold secondary--text"
       >Make your next Party awesome!</h1>
       <v-row>
-        <v-col v-for="item in items" :key="item.id">
+        <v-col v-for="(item, i) in items" :key="i">
           <ListItem :item="item" />
         </v-col>
       </v-row>
@@ -15,23 +15,14 @@
 
 <script>
 import ListItem from "../components/ListItem";
-import { Axios } from "../../Axios";
 
 export default {
   components: {
     ListItem
   },
-  data() {
-    return {
-      items: []
-    };
-  },
-  async created() {
-    try {
-      const response = await Axios.get("/items");
-      this.items = response.data.reverse();
-    } catch (error) {
-      console.log(error);
+  computed: {
+    items() {
+      return this.$store.getters.loadedItems;
     }
   }
 };

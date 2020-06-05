@@ -24,6 +24,8 @@ new Vue({
       storageBucket: "party-wall-e5824.appspot.com",
       appId: "1:562412399028:web:7a5c3ee687023938182ae1",
     });
+
+    this.$store.dispatch("loadItems");
     firebase.auth().onAuthStateChanged((user) => {
       if (user) {
         this.$store.dispatch("autoLogin", user);

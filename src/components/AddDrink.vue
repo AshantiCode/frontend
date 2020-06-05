@@ -89,7 +89,7 @@
 </template>
 
 <script>
-import { Axios } from "../../Axios";
+// import { Axios } from "../../Axios";
 import { store } from "../store";
 
 export default {
@@ -115,7 +115,7 @@ export default {
   methods: {
     async onAddDrink() {
       const creatorId = store.getters.user.id;
-      const newDrinksData = {
+      const newDrinkData = {
         name: this.name,
         category: "drinks",
         volume: this.volume,
@@ -123,9 +123,11 @@ export default {
         price: this.price,
         creatorId: creatorId
       };
-      const response = await Axios.post("/items/", newDrinksData);
+      //   const response = await Axios.post("/items/", newDrinkData);
+      //   console.log("Res.inAddDrink: ", response.data);
 
-      this.$store.dispatch("setUser", response.data);
+      //   this.$store.dispatch("setUser", response.data);
+      this.$store.dispatch("addDrink", newDrinkData);
       this.$router.push({ name: "home" });
     }
   }
