@@ -1,7 +1,7 @@
 import axios from "axios";
 
 export const Axios = axios.create({
-  baseURL: "http://localhost:3000",
+  baseURL: "https://party-wall.herokuapp.com",
   headers: {
     "Content-Type": "application/json",
     "Access-Control-Allow-Origin": "*",
