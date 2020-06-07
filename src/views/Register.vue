@@ -27,6 +27,7 @@
                       name="password"
                       label="Password"
                       id="password"
+                      type="password"
                       v-model="password"
                       :rules="passwordRules"
                       prepend-icon="mdi-lock"
