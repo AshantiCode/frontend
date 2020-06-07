@@ -17,16 +17,25 @@ export const store = new Vuex.Store({
       state.user = payload;
     },
     setLoadedItems(state, payload) {
-      state.loadedItems = payload;
-    },
-    setItems(state, payload) {
-      state.items = payload;
+      state.loadedItems = payload.reverse();
     },
     addDrink(state, payload) {
       state.loadedItems.unshift(payload);
     },
     addFood(state, payload) {
       state.loadedItems.unshift(payload);
+    },
+    updateItems(state, payload) {
+      const itemToDelete = payload;
+      const oldLoadedItems = this.state.loadedItems;
+
+      let newLoadedItems = [];
+      oldLoadedItems.filter((item) => {
+        if (item.id != itemToDelete) {
+          newLoadedItems.push(item);
+        }
+        state.loadedItems = newLoadedItems;
+      });
     },
     setError(state, payload) {
       state.error = payload;
@@ -68,7 +77,6 @@ export const store = new Vuex.Store({
     async loadItems({ commit }) {
       try {
         const response = await Axios.get("/items");
-
         const items = [];
         const obj = response.data;
         for (let key in obj) {
@@ -79,7 +87,7 @@ export const store = new Vuex.Store({
             description: obj[key].description,
             price: obj[key].price,
             quantity: obj[key].quantity,
-            userId: obj[key].userId,
+            creatorId: obj[key].creatorId,
             weight: obj[key].weight,
             volume: obj[key].volume,
           });
@@ -127,18 +135,21 @@ export const store = new Vuex.Store({
           creatorId: payload.creatorId,
         };
         const response = await Axios.post("/items", food);
-        console.log("Axios response after Post: ", response);
-        const id = response.data.id;
-
+        const id = await response.data.id;
         commit("addFood", { ...food, id: id });
       } catch (error) {
         commit("setError", error);
       }
     },
 
-    deleteItem({ commit }, payload) {
-      console.log("Payload deleteItem in store l111", payload);
-      console.log("commit deleteItem in store l111", commit);
+    async deleteItem({ commit }, payload) {
+      try {
+        const id = payload;
+        await Axios.delete(`/items/${id}`);
+        commit("updateItems", id);
+      } catch (error) {
+        commit("setError", error);
+      }
     },
     clearError({ commit }) {
       commit("clearError");
@@ -146,7 +157,6 @@ export const store = new Vuex.Store({
   },
   getters: {
     loadedItems(state) {
-      console.log("state: l102 ", state.loadedItems);
       return state.loadedItems;
     },
     loadedItem(state) {
