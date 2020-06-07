@@ -25,6 +25,9 @@ export const store = new Vuex.Store({
     addDrink(state, payload) {
       state.loadedItems.unshift(payload);
     },
+    addFood(state, payload) {
+      state.loadedItems.unshift(payload);
+    },
     setError(state, payload) {
       state.error = payload;
     },
@@ -70,7 +73,7 @@ export const store = new Vuex.Store({
         const obj = response.data;
         for (let key in obj) {
           items.push({
-            id: obj[key],
+            id: obj[key].id,
             category: obj[key].category,
             name: obj[key].name,
             description: obj[key].description,
@@ -93,22 +96,53 @@ export const store = new Vuex.Store({
       firebase.auth().signOut();
       commit("setUser", null);
     },
-    addDrink({ commit }, payload) {
-      console.log("payload in addNewDrink action: ", payload);
-      console.log("commit in addNewDrink action: ", commit);
-      const drink = {
-        name: payload.name,
-        category: payload.category,
-        creatorId: payload.creatorId,
-        price: payload.price,
-        quantity: payload.quantity,
-        volume: payload.volume,
-      };
-      commit("addDrink", drink);
+    async addDrink({ commit }, payload) {
+      try {
+        const drink = {
+          name: payload.name,
+          category: payload.category,
+          creatorId: payload.creatorId,
+          price: payload.price,
+          quantity: payload.quantity,
+          volume: payload.volume,
+        };
+        const response = await Axios.post("/items", drink);
+        const id = await response.data.id;
+
+        commit("addDrink", { ...drink, id: id });
+      } catch (error) {
+        commit("setError", error);
+      }
     },
-  },
-  clearError({ commit }) {
-    commit("clearError");
+
+    async addFood({ commit }, payload) {
+      try {
+        const food = {
+          name: payload.name,
+          category: payload.category,
+          description: payload.description,
+          weight: payload.weight,
+          quantity: payload.quantity,
+          price: payload.price,
+          creatorId: payload.creatorId,
+        };
+        const response = await Axios.post("/items", food);
+        console.log("Axios response after Post: ", response);
+        const id = response.data.id;
+
+        commit("addFood", { ...food, id: id });
+      } catch (error) {
+        commit("setError", error);
+      }
+    },
+
+    deleteItem({ commit }, payload) {
+      console.log("Payload deleteItem in store l111", payload);
+      console.log("commit deleteItem in store l111", commit);
+    },
+    clearError({ commit }) {
+      commit("clearError");
+    },
   },
   getters: {
     loadedItems(state) {
