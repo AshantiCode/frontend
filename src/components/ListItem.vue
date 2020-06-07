@@ -34,7 +34,7 @@
               color="accent"
               v-if="userIsCreator"
               style="transform: translateY(-44px)"
-              @click="onDeleteItem(item)"
+              @click="onDeleteItem(item.id)"
             >
               <v-icon>mdi-delete-forever</v-icon>
             </v-btn>
@@ -87,8 +87,6 @@
 </template>
 
 <script>
-import { Axios } from "../../Axios";
-
 export default {
   name: "ListItem",
   props: ["item"],
@@ -99,17 +97,8 @@ export default {
     };
   },
   methods: {
-    onDeleteItem(item) {
-      const deleteUrl = `/items/${item.id}`;
-      //   const self = this.i;
-      Axios.delete(deleteUrl, item).then(response => {
-        console.log("delete respone: ", response);
-        if (response.value) {
-          console.log("in remove: ", this.item);
-          this.item.$remove(item);
-        }
-        // location.reload();
-      });
+    onDeleteItem(itemId) {
+      this.$store.dispatch("deleteItem", itemId);
     }
   },
   computed: {
