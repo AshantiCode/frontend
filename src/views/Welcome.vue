@@ -60,7 +60,7 @@
 
 .dog {
   position: absolute;
-  bottom: 650px;
+  bottom: 669px;
   left: 1120px;
 }
 .subtitle {
