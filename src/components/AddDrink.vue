@@ -99,7 +99,8 @@ export default {
       volume: "",
       quantity: "",
       price: "",
-      creatorId: ""
+      creatorId: "",
+      id: ""
     };
   },
   computed: {
@@ -123,10 +124,6 @@ export default {
         price: this.price,
         creatorId: creatorId
       };
-      //   const response = await Axios.post("/items/", newDrinkData);
-      //   console.log("Res.inAddDrink: ", response.data);
-
-      //   this.$store.dispatch("setUser", response.data);
       this.$store.dispatch("addDrink", newDrinkData);
       this.$router.push({ name: "home" });
     }
