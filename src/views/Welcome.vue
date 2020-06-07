@@ -1,13 +1,13 @@
 <template >
   <v-container class="text-center overflow">
     <v-row class="mt-12">
-      <v-col cols="12">
+      <v-col cols="12" class="py-0">
         <h1 class="custom-title">
           <span class="party">PARTY</span>
           <span class="wall">WALL</span>
         </h1>
       </v-col>
-      <v-col cols="12" lg="8" offset-lg="2">
+      <v-col cols="12" lg="8" offset-lg="2" class="py-0">
         <h2 class="subtitle">
           No hustle, just enjoy. Let us do take care about food and drinks and you care about your guests. Explore food and drinks or
           sell your awesome stuff.
@@ -44,7 +44,7 @@
 
 <style scoped>
 .custom-title {
-  font-size: 3.875rem;
+  font-size: 3rem;
   color: #38726c;
 }
 .party {
@@ -59,7 +59,7 @@
 .subtitle {
   margin: 0 auto;
   color: #9c9407;
-  padding: 0 40px;
+  /* padding: 0 40px; */
   text-align: center;
 }
 .position {
@@ -97,11 +97,11 @@
   .woman {
     bottom: 0;
   }
-}
-@media (min-width: 700px) {
   .custom-title {
     margin-top: 73px;
-    font-size: 5rem;
+    font-size: 6rem;
   }
+}
+@media (min-width: 700px) {
 }
 </style>
