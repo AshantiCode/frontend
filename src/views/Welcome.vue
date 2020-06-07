@@ -1,7 +1,8 @@
-<template>
-  <div class="text-center py-12" style="margin-top:100px">
+<template >
+  <div class="text-center py-12" style="margin-top:100px;">
     <h1 class="display-4">
-      <span class="primary--text uppercase">PARTY</span><span class="primary--text font-weight-bold">WALL</span>
+      <span class="primary--text uppercase">PARTY</span>
+      <span class="primary--text font-weight-bold">WALL</span>
     </h1>
     <h2 class="subtitle">
       No hustle, just enjoy. Let us do take care about food and drinks and you care about your guests. Explore food and drinks or
@@ -20,7 +21,10 @@
     <div style="width: 450px;">
       <v-img :src="require('@/assets/happy-me.png')" class="position me"></v-img>
     </div>
-    <v-btn color="accent" class="py-6 px-8 mt-12" to="/login">Explore Now <v-icon class="ml-3">mdi-party-popper</v-icon></v-btn>
+    <v-btn color="accent" class="py-6 px-8 mt-12" to="/login">
+      Explore Now
+      <v-icon class="ml-3">mdi-party-popper</v-icon>
+    </v-btn>
   </div>
 </template>
 
