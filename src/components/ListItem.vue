@@ -4,7 +4,7 @@
       <v-row>
         <v-hover v-slot:default="{ hover }">
           <v-col class="pa-0" style="position: relative">
-            <v-img v-if="drinks" max-height="200px" :src="require('@/assets/drinks.jpg')"></v-img>
+            <v-img v-if="drinks" max-height="200px" :src="require('@/assets/drinks1.jpg')"></v-img>
 
             <div style="position:relative;">
               <v-fade-transition v-if="!drinks">
