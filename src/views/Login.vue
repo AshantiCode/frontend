@@ -6,7 +6,7 @@
           <v-card-title>
             <h1 class="display-1 secondary--text">Login</h1>
           </v-card-title>
-          <v-card-text>
+          <v-card-text class="pb-0">
             <v-container>
               <v-form name="form" @submit.prevent="onLogin">
                 <v-row>
@@ -38,6 +38,9 @@
                   <v-col cols="12">
                     <v-btn type="submit" :disabled="!formIsValid" color="accent">Login</v-btn>
                     <app-alert v-if="error" @dismissed="onDismissed" :text="error.message"></app-alert>
+                    <router-link to="/login">
+                      <p class="pt-6">Are you new here? Go to Register</p>
+                    </router-link>
                   </v-col>
                 </v-row>
               </v-form>
