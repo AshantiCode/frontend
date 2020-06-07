@@ -66,6 +66,15 @@
       "volume": "5",
       "price": "20",
       "quantity": "5"
+    },
+    {
+      "name": "Margherita",
+      "category": "drinks",
+      "creatorId": "Lc6bGUqX2RXGoOYtRojJsAzgIDu1",
+      "price": 43,
+      "quantity": 5,
+      "volume": 1,
+      "id": "2uHNwcr"
     }
   ],
   "user": [

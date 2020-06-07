@@ -1,43 +1,66 @@
 <template >
-  <div class="text-center py-12" style="margin-top:100px;">
-    <h1 class="display-4">
-      <span class="primary--text uppercase">PARTY</span>
-      <span class="primary--text font-weight-bold">WALL</span>
-    </h1>
-    <h2 class="subtitle">
-      No hustle, just enjoy. Let us do take care about food and drinks and you care about your guests. Explore food and drinks or
-      sell your awesome stuff.
-    </h2>
-    <div style="width: 450px;">
-      <v-img :src="require('@/assets/frau-happy.png')" class="position woman"></v-img>
-    </div>
-    <div style="width: 450px;">
-      <v-img :src="require('@/assets/mann-happy.png')" class="position man"></v-img>
-    </div>
-    <div>
-      <v-img style="height: 250px;" :src="require('@/assets/happy-dog.png')" class="dog"></v-img>
-    </div>
+  <v-container class="text-center overflow">
+    <v-row class="mt-12">
+      <v-col cols="12">
+        <h1 class="custom-title">
+          <span class="party">PARTY</span>
+          <span class="wall">WALL</span>
+        </h1>
+      </v-col>
+      <v-col cols="12" lg="8" offset-lg="2">
+        <h2 class="subtitle">
+          No hustle, just enjoy. Let us do take care about food and drinks and you care about your guests. Explore food and drinks or
+          sell your awesome stuff.
+        </h2>
+      </v-col>
+    </v-row>
+    <v-row>
+      <v-col>
+        <div style="width: 450px;">
+          <v-img :src="require('@/assets/frau-happy.png')" class="woman"></v-img>
+        </div>
+        <div style="width: 450px;">
+          <v-img :src="require('@/assets/mann-happy.png')" class="position man"></v-img>
+        </div>
+        <div>
+          <v-img style="height: 250px;" :src="require('@/assets/happy-dog.png')" class="dog"></v-img>
+        </div>
 
-    <div style="width: 450px;">
-      <v-img :src="require('@/assets/happy-me.png')" class="position me"></v-img>
-    </div>
-    <v-btn color="accent" class="py-6 px-8 mt-12" to="/login">
-      Explore Now
-      <v-icon class="ml-3">mdi-party-popper</v-icon>
-    </v-btn>
-  </div>
+        <div style="width: 450px;">
+          <v-img :src="require('@/assets/happy-me.png')" class="position me"></v-img>
+        </div>
+      </v-col>
+    </v-row>
+    <v-row>
+      <v-col>
+        <v-btn color="accent" class="py-6 px-8 mt-12" to="/login">
+          Explore Now
+          <v-icon class="ml-3">mdi-party-popper</v-icon>
+        </v-btn>
+      </v-col>
+    </v-row>
+  </v-container>
 </template>
 
 <style scoped>
+.custom-title {
+  font-size: 3.875rem;
+  color: #38726c;
+}
+.party {
+  font-weight: 300;
+}
+
 .dog {
   position: absolute;
   bottom: 650px;
   left: 1120px;
 }
 .subtitle {
-  max-width: 50%;
   margin: 0 auto;
   color: #9c9407;
+  padding: 0 40px;
+  text-align: center;
 }
 .position {
   position: absolute;
@@ -45,12 +68,40 @@
 }
 .woman {
   left: 100px;
+  position: absolute;
+  bottom: -10;
 }
 .man {
   left: 1200px;
-  /* right: 400px; */
 }
 .me {
   right: 350px;
+}
+
+@media (max-width: 1150px) {
+  .me {
+    display: none;
+  }
+}
+@media (max-width: 1600px) {
+  .man {
+    display: none;
+  }
+}
+@media (max-width: 1700px) {
+  .dog {
+    display: none;
+  }
+}
+@media (min-width: 670px) {
+  .woman {
+    bottom: 0;
+  }
+}
+@media (min-width: 700px) {
+  .custom-title {
+    margin-top: 73px;
+    font-size: 5rem;
+  }
 }
 </style>
