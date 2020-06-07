@@ -30,9 +30,6 @@
                       v-model="password"
                       :rules="passwordRules"
                       prepend-icon="mdi-lock"
-                      :append-icon="showPassword ? 'mdi-eye' : 'mdi-eye-off'"
-                      :type="showPassword ? 'text' : 'password'"
-                      @click:append="showPassword = !showPassword"
                       required
                     ></v-text-field>
                   </v-col>
@@ -56,11 +53,15 @@
 export default {
   data() {
     return {
-      showPassword: false,
       email: "",
       password: "",
-      emailRules: [(v) => !!v || "E-mail is required", (v) => /.+@.+\..+/.test(v) || "E-mail must be valid"],
-      passwordRules: [(v) => (v && v.length > 6) || "Name must have at least 6 characters"],
+      emailRules: [
+        v => !!v || "E-mail is required",
+        v => /.+@.+\..+/.test(v) || "E-mail must be valid"
+      ],
+      passwordRules: [
+        v => (v && v.length > 6) || "Name must have at least 6 characters"
+      ]
     };
   },
   computed: {
@@ -72,14 +73,14 @@ export default {
     },
     error() {
       return this.$store.getters.error;
-    },
+    }
   },
   watch: {
     user(value) {
       if ((value !== null) & (value !== undefined)) {
         this.$router.push({ name: "home" });
       }
-    },
+    }
   },
   methods: {
     onLogin() {
@@ -88,13 +89,13 @@ export default {
       }
       const newUser = {
         email: this.email,
-        password: this.password,
+        password: this.password
       };
       this.$store.dispatch("loginUser", newUser);
     },
     onDismissed() {
       this.$store.dispatch("clearError");
-    },
-  },
+    }
+  }
 };
 </script>
