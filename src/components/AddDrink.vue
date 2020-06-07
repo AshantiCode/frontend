@@ -38,14 +38,15 @@
                     single-line
                     type="number"
                     style="width: 45px"
-                  ></v-text-field>oz
+                  ></v-text-field
+                  >oz
                 </template>
               </v-slider>
             </v-col>
           </v-row>
           <v-row>
             <v-col>
-              <p>How many servings does one order include?</p>
+              <h4 class="font-weight-regular">What is the maximun amount you can deliver?</h4>
               <v-slider v-model="quantity" class="align-center" max="15" min="1" hide-details>
                 <template v-slot:append>
                   <v-text-field
@@ -62,7 +63,10 @@
           </v-row>
           <v-row>
             <v-col>
-              <p>How much does one order cost?</p>
+              <h4 class="font-weight-regular">
+                How much does one
+                <span class="accent--text">{{ name }}</span> cost?
+              </h4>
               <v-slider v-model="price" class="align-center" max="100" min="1" hide-details>
                 <template v-slot:append>
                   <v-text-field
@@ -72,7 +76,8 @@
                     single-line
                     type="number"
                     style="width: 45px"
-                  ></v-text-field>€
+                  ></v-text-field
+                  >€
                 </template>
               </v-slider>
             </v-col>
@@ -100,18 +105,13 @@ export default {
       quantity: "",
       price: "",
       creatorId: "",
-      id: ""
+      id: "",
     };
   },
   computed: {
     formIsValid() {
-      return (
-        this.name !== "" &&
-        this.volume !== "" &&
-        this.quantity !== "" &&
-        this.price !== ""
-      );
-    }
+      return this.name !== "" && this.volume !== "" && this.quantity !== "" && this.price !== "";
+    },
   },
   methods: {
     async onAddDrink() {
@@ -122,11 +122,11 @@ export default {
         volume: this.volume,
         quantity: this.quantity,
         price: this.price,
-        creatorId: creatorId
+        creatorId: creatorId,
       };
       this.$store.dispatch("addDrink", newDrinkData);
       this.$router.push({ name: "home" });
-    }
-  }
+    },
+  },
 };
 </script>
