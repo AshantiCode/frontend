@@ -87,8 +87,6 @@
 </template>
 
 <script>
-import { Axios } from "../../Axios";
-
 export default {
   name: "ListItem",
   props: ["item"],
@@ -100,12 +98,7 @@ export default {
   },
   methods: {
     onDeleteItem(itemId) {
-      const deleteUrl = `/items/${itemId}`;
-
-      Axios.delete(deleteUrl).then(response => {
-        console.log("response data: ", response);
-        // location.reload();
-      });
+      this.$store.dispatch("deleteItem", itemId);
     }
   },
   computed: {

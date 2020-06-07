@@ -66,58 +66,6 @@
       "volume": "5",
       "price": "20",
       "quantity": "5"
-    },
-    {
-      "name": "test",
-      "category": "food",
-      "description": "dfdsfsf",
-      "weight": 3,
-      "quantity": 3,
-      "price": 15,
-      "id": "_bgJZjJ"
-    },
-    {
-      "name": "Prosecco",
-      "category": "drinks",
-      "volume": 22,
-      "quantity": 5,
-      "price": 32,
-      "id": "qE6VRfj"
-    },
-    {
-      "name": "Yet Another Food Item",
-      "category": "food",
-      "description": "Yummi Yummy deliscios yamm yamm",
-      "weight": 2,
-      "quantity": 4,
-      "price": 35,
-      "id": "eAyz583"
-    },
-    {
-      "name": "Green Smothies",
-      "category": "drinks",
-      "volume": 21,
-      "quantity": 15,
-      "price": 5,
-      "id": "t59X9fb"
-    },
-    {
-      "name": "Mashed Potatoes",
-      "category": "food",
-      "description": "Like your granny did!",
-      "weight": 2,
-      "quantity": 13,
-      "price": 9,
-      "id": "DU49QK5"
-    },
-    {
-      "name": "Milk",
-      "category": "drinks",
-      "volume": 16,
-      "quantity": 5,
-      "price": 14,
-      "creatorId": "Lc6bGUqX2RXGoOYtRojJsAzgIDu1",
-      "id": "qyElW7W"
     }
   ],
   "user": [
