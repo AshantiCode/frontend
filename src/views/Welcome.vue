@@ -33,7 +33,7 @@
     </v-row>
     <v-row>
       <v-col>
-        <v-btn color="accent" class="py-6 px-8 mt-12" to="/login">
+        <v-btn color="accent" class="py-6 px-8 mt-12" to="/register">
           Explore Now
           <v-icon class="ml-3">mdi-party-popper</v-icon>
         </v-btn>
