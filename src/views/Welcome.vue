@@ -1,7 +1,7 @@
 <template>
   <v-container>
-    <v-row class="mt-12 text-center ">
-      <v-col cols="12" class="py-0 ">
+    <v-row class="mt-12 text-center">
+      <v-col cols="12" class="py-0">
         <h2 class="primary--text pretitle">AWESOME</h2>
       </v-col>
     </v-row>
@@ -13,14 +13,7 @@
         </h1>
       </v-col>
     </v-row>
-    <v-row>
-      <v-col cols="12" lg="8" offset-lg="2" class="py-0 px-6">
-        <h2 class="subtitle">
-          No hustle, just enjoy. Let us do take care about food and drinks and you care about your guests. Explore food and drinks
-          or sell your awesome stuff.
-        </h2>
-      </v-col>
-    </v-row>
+
     <v-row>
       <v-col>
         <div style="width: 450px;">
@@ -36,6 +29,14 @@
         <div style="width: 450px;">
           <v-img :src="require('@/assets/happy-me.png')" class="position me"></v-img>
         </div>
+      </v-col>
+    </v-row>
+    <v-row>
+      <v-col cols="12" lg="8" offset-lg="2" class="py-0 px-6">
+        <h2 class="subtitle">
+          No hustle, just enjoy. Let us do take care about food and drinks and you care about your guests. Explore food and drinks
+          or sell your awesome stuff.
+        </h2>
       </v-col>
     </v-row>
     <v-row>
@@ -68,6 +69,7 @@
   color: #9c9407;
   /* padding: 0 40px; */
   text-align: center;
+  /* z-index: 10; */
 }
 .position {
   position: absolute;
@@ -77,6 +79,7 @@
   left: 100px;
   position: absolute;
   bottom: -10;
+  /* z-index: 1; */
 }
 .man {
   left: 1200px;
@@ -85,13 +88,9 @@
   right: 350px;
 }
 
-@media (max-width: 1150px) {
-  .me {
-    display: none;
-  }
-}
 @media (max-width: 1600px) {
-  .man {
+  .man,
+  .me {
     display: none;
   }
 }
@@ -100,14 +99,12 @@
     display: none;
   }
 }
-@media (min-width: 670px) {
+@media (min-width: 1000px) {
   .woman {
-    bottom: 0;
+    bottom: -50px;
   }
   .custom-title {
     font-size: 6rem;
   }
-}
-@media (min-width: 700px) {
 }
 </style>
