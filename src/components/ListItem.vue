@@ -76,9 +76,13 @@
           <v-col cols="6">
             <v-card-text class="title pt-0">Total: {{ totalPrice }} €</v-card-text>
           </v-col>
-
           <v-col>
-            <v-btn small class="primary">Order now</v-btn>
+            <v-tooltip top>
+              <template v-slot:activator="{on, attr}">
+                <v-btn small class="primary" v-bind="attr" v-on="on">Order now</v-btn>
+              </template>
+              <span>The ordering functionality is not part of this project yet.</span>
+            </v-tooltip>
           </v-col>
         </v-row>
       </v-row>
