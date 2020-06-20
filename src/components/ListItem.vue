@@ -62,14 +62,19 @@
             <v-card-text class="text--disabled">Order Amount:</v-card-text>
           </v-col>
 
-          <v-col cols="6">
-            <v-select
-              class="text--secondary orders"
-              dense
-              v-model="selectedAmount"
-              :items="maxItemsArray"
-            ></v-select>
-          </v-col>
+          <v-tooltip top>
+            <template once v-slot:activator="{on, attr}">
+              <v-col cols="6" v-on="on" v-bind="attr">
+                <v-select
+                  class="text--secondary orders"
+                  dense
+                  v-model="selectedAmount"
+                  :items="maxItemsArray"
+                ></v-select>
+              </v-col>
+            </template>
+            <span>Change the amount and see how the total price changes!</span>
+          </v-tooltip>
         </v-row>
 
         <v-row>
@@ -81,7 +86,7 @@
               <template v-slot:activator="{on, attr}">
                 <v-btn small class="primary" v-bind="attr" v-on="on">Order now</v-btn>
               </template>
-              <span>The ordering functionality is not part of this project yet.</span>
+              <span>The ordering functionality is not part of this project yet 🙈</span>
             </v-tooltip>
           </v-col>
         </v-row>
