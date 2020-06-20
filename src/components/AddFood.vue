@@ -14,7 +14,7 @@
                 v-model="name"
                 name="name"
                 id="name"
-                label="What are you selling?"
+                label="Type here what you are selling..."
                 :counter="20"
                 filled
                 required
@@ -27,7 +27,7 @@
                 v-model="description"
                 name="description"
                 id="description"
-                label="Describe your food"
+                label="Describe your food..."
                 :counter="80"
                 filled
                 auto-grow
