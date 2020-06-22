@@ -1,5 +1,5 @@
 <template>
-  <v-container>
+  <v-container class="container-wrapper">
     <v-row class="mt-12 text-center">
       <v-col cols="12" class="py-0">
         <h2 class="primary--text pretitle">AWESOME</h2>
@@ -13,6 +13,8 @@
         </h1>
       </v-col>
     </v-row>
+
+    <WelcomeModal />
 
     <v-row>
       <v-col>
@@ -49,8 +51,24 @@
     </v-row>
   </v-container>
 </template>
+<template></template>
+
+<script>
+import WelcomeModal from "../components/WelcomeModal";
+
+export default {
+  components: {
+    WelcomeModal
+  }
+};
+</script>
+
+
 
 <style scoped>
+.container-wrapper {
+  max-height: 100vh;
+}
 .custom-title {
   font-size: 3rem;
   color: #38726c;
@@ -67,9 +85,7 @@
 .subtitle {
   margin: 0 auto;
   color: #9c9407;
-  /* padding: 0 40px; */
   text-align: center;
-  /* z-index: 10; */
 }
 .position {
   position: absolute;
@@ -79,7 +95,6 @@
   left: 100px;
   position: absolute;
   bottom: -10;
-  /* z-index: 1; */
 }
 .man {
   left: 1200px;
@@ -100,9 +115,9 @@
   }
 }
 @media (min-width: 1000px) {
-  .woman {
+  /* .woman {
     bottom: -50px;
-  }
+  } */
   .custom-title {
     font-size: 6rem;
   }
